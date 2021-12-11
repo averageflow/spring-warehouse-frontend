@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# Spring Warehouse frontend
+This is the frontend for [the RESTful Java Spring Boot API, called Spring Warehouse](https://github.com/averageflow/spring-warehouse).
+
+This project has been created with React using hooks and functional components, and TypeScript.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
