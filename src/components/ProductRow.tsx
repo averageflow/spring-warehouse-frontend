@@ -5,12 +5,10 @@ function ProductRow(productResponse: ProductResponse): JSX.Element {
     return <Table striped responsive bordered hover>
         <thead>
         <tr>
-
             <th>name</th>
             {/* <th>imageURLs</th> */}
             <th>stock</th>
             <th>price</th>
-
             <th>createdAt</th>
             <th>updatedAt</th>
             <th>uuid</th>
@@ -24,9 +22,9 @@ function ProductRow(productResponse: ProductResponse): JSX.Element {
                 {/* <td>{product.imageUrls}</td> */}
                 <td>{product.productStock}</td>
                 <td>&euro; {product.price}</td>
-                <td>{product.createdAt}</td>
-                <td> {product.updatedAt}</td>
-                <td><small><code> {product.uid}</code></small></td>
+                <td>{new Date(product.createdAt).toLocaleString()}</td>
+                <td> {new Date(product.updatedAt).toLocaleString()}</td>
+                <td><small><code>{product.uid}</code></small></td>
                 {/* <td><details>
                         <summary>View</summary>
                         
