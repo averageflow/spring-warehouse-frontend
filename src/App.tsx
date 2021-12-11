@@ -1,8 +1,4 @@
-import {
-  Route,
-  Routes,
-  BrowserRouter
-} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -12,30 +8,28 @@ import AppNavbar from "./components/AppNavbar";
 
 
 function AppView() {
-  return (
-    <BrowserRouter>
-      <div>
-        <Routes>
-          <Route path="/" element={<ProductsView />} />
-          <Route path="/products" element={<ProductsView />} />
-          <Route path="/articles" element={<ArticlesView />} />
+    return (
+        <BrowserRouter>
+            <div>
+                <Routes>
+                    <Route path="/" element={<ProductsView/>}/>
+                    <Route path="/products" element={<ProductsView/>}/>
+                    <Route path="/articles" element={<ArticlesView/>}/>
 
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
+                </Routes>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 
-
-
 function App() {
-  return (
-    <div>
-      <AppNavbar />
-      <AppView />
-    </div>
-  );
+    return (
+        <div>
+            <AppNavbar/>
+            <AppView/>
+        </div>
+    );
 }
 
 export default App;

@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import ArticleRow from '../components/ArticleRow';
-import { ArticleResponse } from '../domain/ArticleModels';
+import {ArticleResponse} from '../domain/ArticleModels';
 
 
 function ArticlesView(): JSX.Element {
     const [articleRows, setArticleRows] = useState(<></> as JSX.Element);
 
-    const fetchArticleRows = async () => {
+    const fetchArticleRows: () => Promise<void> = async () => {
         fetch(
             `http://localhost:8080/api/articles`,
             {

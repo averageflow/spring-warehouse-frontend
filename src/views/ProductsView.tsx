@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import ProductRow from '../components/ProductRow';
-import { ProductResponse } from '../domain/ProductModels';
+import {ProductResponse} from '../domain/ProductModels';
 
 
 function ProductsView() {
     const [productRows, setProductRows] = useState(<></> as JSX.Element);
 
-    const fetchProductRows = async () => {
+    const fetchProductRows: () => Promise<void> = async () => {
         fetch(
             `http://localhost:8080/api/products`,
             {

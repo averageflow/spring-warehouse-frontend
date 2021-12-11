@@ -1,40 +1,40 @@
-import { Product, ProductResponse } from "../domain/ProductModels";
-import { Figure, Table } from "react-bootstrap";
+import {Product, ProductResponse} from "../domain/ProductModels";
+import {Figure, Table} from "react-bootstrap";
 
 function ProductRow(productResponse: ProductResponse): JSX.Element {
     return <Table striped responsive bordered hover>
         <thead>
-            <tr>
+        <tr>
 
-                <th>name</th>
-                {/* <th>imageURLs</th> */}
-                <th>stock</th>
-                <th>price</th>
+            <th>name</th>
+            {/* <th>imageURLs</th> */}
+            <th>stock</th>
+            <th>price</th>
 
-                <th>createdAt</th>
-                <th>updatedAt</th>
-                <th>uuid</th>
-                <th>image</th>
-            </tr>
+            <th>createdAt</th>
+            <th>updatedAt</th>
+            <th>uuid</th>
+            <th>image</th>
+        </tr>
         </thead>
         <tbody>
-            {Object.values(productResponse.content).map((product: Product, index: number) => {
-                return <tr key={index}>
-                    <td>{product.name}</td>
-                    {/* <td>{product.imageUrls}</td> */}
-                    <td>{product.productStock}</td>
-                    <td>&euro; {product.price}</td>
-                    <td>{product.createdAt}</td>
-                    <td> {product.updatedAt}</td>
-                    <td><small><code> {product.uid}</code></small></td>
-                    {/* <td><details>
+        {Object.values(productResponse.content).map((product: Product, index: number) => {
+            return <tr key={index}>
+                <td>{product.name}</td>
+                {/* <td>{product.imageUrls}</td> */}
+                <td>{product.productStock}</td>
+                <td>&euro; {product.price}</td>
+                <td>{product.createdAt}</td>
+                <td> {product.updatedAt}</td>
+                <td><small><code> {product.uid}</code></small></td>
+                {/* <td><details>
                         <summary>View</summary>
                         
                     </details></td> */}
-                    <td>{ImageList(product.name, product.imageURLs)}</td>
+                <td>{ImageList(product.name, product.imageURLs)}</td>
 
-                </tr>
-            })}
+            </tr>
+        })}
         </tbody>
     </Table>
 }

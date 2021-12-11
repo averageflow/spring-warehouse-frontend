@@ -1,4 +1,4 @@
-import { Figure } from "react-bootstrap";
+import {Figure} from "react-bootstrap";
 
 
 function AppNavbar(): JSX.Element {
@@ -17,7 +17,8 @@ function AppNavbar(): JSX.Element {
             My SpringWarehouse
 
         </a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -30,7 +31,7 @@ function AppNavbar(): JSX.Element {
                 </li>
             </ul>
         </div>
-    </nav >
+    </nav>
 }
 
 export default AppNavbar;
