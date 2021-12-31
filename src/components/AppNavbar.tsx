@@ -29,6 +29,9 @@ function AppNavbar(): JSX.Element {
                 <li className="nav-item">
                     <a className="nav-link" href="/articles">Articles</a>
                 </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="/authenticate">Authenticate</a>
+                </li>
             </ul>
         </div>
     </nav>
