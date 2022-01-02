@@ -44,6 +44,7 @@ function LoginView() {
       .then((res) => {
         // Handle response
         console.log("Response: ", res);
+        document.location = "/";
       })
       .catch((err) => {
         // Handle error
