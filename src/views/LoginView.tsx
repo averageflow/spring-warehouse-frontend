@@ -35,7 +35,7 @@ function LoginView() {
         "Content-type": "application/json; charset=UTF-8",
       },
 
-      //credentials: 'include',
+      credentials: "include",
       body: JSON.stringify({
         email: state.email,
         password: state.password,
