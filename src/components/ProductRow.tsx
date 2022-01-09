@@ -16,6 +16,7 @@ function ProductRow(productResponse: ProductResponse): JSX.Element {
           <th>image</th>
         </tr>
       </thead>
+
       <tbody>
         {Object.values(productResponse.content).map(
           (product: Product, index: number) => {

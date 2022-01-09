@@ -1,31 +1,39 @@
-import {Article, ArticleResponse} from "../domain/ArticleModels"
-import {Table} from "react-bootstrap";
-
+import { Article, ArticleResponse } from "../domain/ArticleModels";
+import { Table } from "react-bootstrap";
 
 function ArticleRow(articleResponse: ArticleResponse): JSX.Element {
-    return <Table striped responsive bordered hover>
-        <thead>
+  return (
+    <Table striped responsive bordered hover>
+      <thead>
         <tr>
-            <th>name</th>
-            <th>stock</th>
-            <th>createdAt</th>
-            <th>updatedAt</th>
-            <th>uuid</th>
+          <th>name</th>
+          <th>stock</th>
+          <th>createdAt</th>
+          <th>updatedAt</th>
+          <th>uuid</th>
         </tr>
-        </thead>
-        <tbody>
-        {Object.values(articleResponse.content).map((article: Article, index: number) => {
-            return <tr key={index}>
+      </thead>
+      <tbody>
+        {Object.values(articleResponse.content).map(
+          (article: Article, index: number) => {
+            return (
+              <tr key={index}>
                 <td>{article.name}</td>
                 <td>{article.stock}</td>
                 <td>{new Date(article.createdAt).toLocaleString()}</td>
                 <td>{new Date(article.updatedAt).toLocaleString()}</td>
-                <td><small><code>{article.uid}</code></small></td>
-            </tr>
-        })}
-        </tbody>
+                <td>
+                  <small>
+                    <code>{article.uid}</code>
+                  </small>
+                </td>
+              </tr>
+            );
+          }
+        )}
+      </tbody>
     </Table>
+  );
 }
 
-
-export default ArticleRow
+export default ArticleRow;
