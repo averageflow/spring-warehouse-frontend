@@ -7,7 +7,6 @@ function ProductRow(productResponse: ProductResponse): JSX.Element {
       <thead>
         <tr>
           <th>name</th>
-          {/* <th>imageURLs</th> */}
           <th>stock</th>
           <th>price</th>
           <th>createdAt</th>
@@ -23,7 +22,6 @@ function ProductRow(productResponse: ProductResponse): JSX.Element {
             return (
               <tr key={index}>
                 <td>{product.name}</td>
-                {/* <td>{product.imageUrls}</td> */}
                 <td>{product.stock}</td>
                 <td>&euro; {product.price}</td>
                 <td>{new Date(product.createdAt).toLocaleString()}</td>
