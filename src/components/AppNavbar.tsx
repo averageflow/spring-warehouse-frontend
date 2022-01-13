@@ -1,4 +1,5 @@
 import { Figure } from "react-bootstrap";
+import { Outlet, Link } from "react-router-dom";
 
 function AppNavbar(): JSX.Element {
   let navbarOpen: boolean = false;
@@ -16,18 +17,20 @@ function AppNavbar(): JSX.Element {
   return (
     <nav className="navbar navbar-light bg-light navbar-expand-lg p-2">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/products">
-          <Figure>
-            <Figure.Image
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-              alt="SpringWarehouse logo"
-              src="/spring-3-logo-png-transparent.png"
-            />
-          </Figure>
-          SpringWarehouse
-        </a>
+        <div className="navbar-brand">
+          <Link to="/products">
+            <Figure>
+              <Figure.Image
+                width="30"
+                height="30"
+                className="d-inline-block align-top"
+                alt="SpringWarehouse logo"
+                src="/spring-3-logo-png-transparent.png"
+              />
+            </Figure>
+            SpringWarehouse
+          </Link>
+        </div>
 
         <button
           className="navbar-toggler"
@@ -48,14 +51,14 @@ function AppNavbar(): JSX.Element {
                         <a className="nav-link active" aria-current="page" href="/products">Products</a>
                     </li> */}
             <li className="nav-item">
-              <a className="nav-link" href="/articles">
-                Articles
-              </a>
+              <div className="nav-link">
+                <Link to="/articles">Articles</Link>
+              </div>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/authenticate">
-                Authenticate
-              </a>
+              <div className="nav-link">
+                <Link to="/authenticate">Authenticate</Link>
+              </div>
             </li>
           </ul>
         </div>

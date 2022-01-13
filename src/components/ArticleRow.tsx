@@ -1,4 +1,4 @@
-import { Article, ArticleResponse } from "../domain/ArticleModels";
+import { Article, ArticleResponse } from "../domain/article/ArticleModels";
 import { Table } from "react-bootstrap";
 
 function ArticleRow(articleResponse: ArticleResponse): JSX.Element {

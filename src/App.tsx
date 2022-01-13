@@ -7,9 +7,10 @@ import ArticlesView from "./views/ArticlesView";
 import AppNavbar from "./components/AppNavbar";
 import LoginView from "./views/LoginView";
 
-function AppView() {
+function App() {
   return (
-    <BrowserRouter>
+    <div>
+      <AppNavbar />
       <div>
         <Routes>
           <Route path="/" element={<ProductsView />} />
@@ -18,15 +19,6 @@ function AppView() {
           <Route path="/articles" element={<ArticlesView />} />
         </Routes>
       </div>
-    </BrowserRouter>
-  );
-}
-
-function App() {
-  return (
-    <div>
-      <AppNavbar />
-      <AppView />
     </div>
   );
 }

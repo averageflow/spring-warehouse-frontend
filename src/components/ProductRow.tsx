@@ -1,4 +1,4 @@
-import { Product, ProductResponse } from "../domain/ProductModels";
+import { Product, ProductResponse } from "../domain/product/ProductModels";
 import { Figure, Table } from "react-bootstrap";
 
 function ProductRow(productResponse: ProductResponse): JSX.Element {
