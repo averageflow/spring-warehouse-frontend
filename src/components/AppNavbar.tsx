@@ -1,8 +1,9 @@
 import { Figure } from "react-bootstrap";
 import { Outlet, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function AppNavbar(): JSX.Element {
-  let navbarOpen: boolean = false;
+  const [navbarOpen, setNavbarOpen] = useState(false);
 
   const getNavbarClass = () => {
     const showNavClass = navbarOpen ? "show" : "";
@@ -10,9 +11,11 @@ function AppNavbar(): JSX.Element {
   };
 
   const handleNavButtonClick = () => {
-    console.log(navbarOpen);
-    navbarOpen = !navbarOpen;
+    console.log("navbarOpen ", navbarOpen);
+    setNavbarOpen(!navbarOpen);
   };
+
+  useEffect(() => {}, [navbarOpen]);
 
   return (
     <nav
@@ -30,7 +33,7 @@ function AppNavbar(): JSX.Element {
               src="/spring-3-logo-png-transparent.png"
             />
           </Figure>
-          <span>SpringWarehouse</span>
+          <small>SpringWarehouse</small>
         </Link>
 
         <button
@@ -43,7 +46,7 @@ function AppNavbar(): JSX.Element {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <small className="navbar-toggler-icon"></small>
         </button>
 
         <div className={getNavbarClass()} id="navbarToggleExternalContent">
