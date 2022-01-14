@@ -34,7 +34,6 @@ function ProductsView() {
 
   return (
     <div className="container">
-      <h1 className="h4">Products in the warehouse</h1>
       <div>{productRows}</div>
     </div>
   );

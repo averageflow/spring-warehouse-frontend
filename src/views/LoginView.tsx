@@ -88,7 +88,10 @@ function LoginView() {
                 placeholder="Please enter your password"
               />
             </div>
-            <button onClick={handleSubmitClick} className="btn btn-dark mt-4">
+            <button
+              onClick={handleSubmitClick}
+              className="btn btn-success mt-4"
+            >
               Authenticate
             </button>
           </div>

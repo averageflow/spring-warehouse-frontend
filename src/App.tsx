@@ -8,6 +8,8 @@ import AppNavbar from "./components/AppNavbar";
 import LoginView from "./views/LoginView";
 
 function App() {
+  document.body.classList.add("bg-dark");
+  document.body.classList.add("text-light");
   return (
     <div>
       <AppNavbar />

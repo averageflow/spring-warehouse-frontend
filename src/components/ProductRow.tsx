@@ -3,45 +3,63 @@ import { Figure, Table } from "react-bootstrap";
 
 function ProductRow(productResponse: ProductResponse): JSX.Element {
   return (
-    <Table striped responsive bordered hover>
-      <thead>
-        <tr>
-          <th>name</th>
-          <th>stock</th>
-          <th>price</th>
-          <th>createdAt</th>
-          <th>updatedAt</th>
-          <th>uuid</th>
-          <th>image</th>
-        </tr>
-      </thead>
+    <>
+      <h1 className="mt-4 h4">Products in the warehouse</h1>
+      <Table striped responsive bordered hover className="table-dark">
+        <thead>
+          <tr>
+            <th>name</th>
+            <th>stock</th>
+            <th>price</th>
+            <th>details</th>
+            {/* <th>createdAt</th>
+            <th>updatedAt</th>
+            <th>uuid</th> */}
+            <th>image</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        {Object.values(productResponse.content).map(
-          (product: Product, index: number) => {
-            return (
-              <tr key={index}>
-                <td>{product.name}</td>
-                <td>{product.stock}</td>
-                <td>&euro; {product.price}</td>
-                <td>{new Date(product.createdAt).toLocaleString()}</td>
-                <td> {new Date(product.updatedAt).toLocaleString()}</td>
-                <td>
-                  <small>
-                    <code>{product.uid}</code>
-                  </small>
-                </td>
-                {/* <td><details>
-                        <summary>View</summary>
-                        
-                    </details></td> */}
-                <td>{ImageList(product.name, product.imageURLs)}</td>
-              </tr>
-            );
-          }
-        )}
-      </tbody>
-    </Table>
+        <tbody>
+          {Object.values(productResponse.content).map(
+            (product: Product, index: number) => {
+              return (
+                <tr key={index}>
+                  <td>{product.name}</td>
+                  <td>{product.stock}</td>
+                  <td>&euro; {product.price}</td>
+
+                  <td>
+                    <details>
+                      <summary>More details</summary>
+                      <ul className="list-group p-3">
+                        <li className="list-group-item list-group-item-dark">
+                          <small>
+                            Created at:&nbsp;
+                            {new Date(product.createdAt).toLocaleString()}
+                          </small>
+                        </li>
+                        <li className="list-group-item list-group-item-dark">
+                          <small>
+                            Updated at:&nbsp;
+                            {new Date(product.updatedAt).toLocaleString()}
+                          </small>
+                        </li>
+                        <li className="list-group-item list-group-item-dark">
+                          <small>
+                            UUID:&nbsp;<code>{product.uid}</code>
+                          </small>
+                        </li>
+                      </ul>
+                    </details>
+                  </td>
+                  <td>{ImageList(product.name, product.imageURLs)}</td>
+                </tr>
+              );
+            }
+          )}
+        </tbody>
+      </Table>
+    </>
   );
 }
 

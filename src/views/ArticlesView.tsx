@@ -34,7 +34,6 @@ function ArticlesView(): JSX.Element {
 
   return (
     <div className="container">
-      <h1 className="h4">Articles in the warehouse</h1>
       <div>{articleRows}</div>
     </div>
   );

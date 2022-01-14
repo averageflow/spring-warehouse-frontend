@@ -15,25 +15,26 @@ function AppNavbar(): JSX.Element {
   };
 
   return (
-    <nav className="navbar navbar-light bg-light navbar-expand-lg p-2">
+    <nav
+      className="navbar navbar-dark bg-black navbar-expand-lg"
+      style={{ paddingBottom: 0 }}
+    >
       <div className="container-fluid">
-        <div className="navbar-brand">
-          <Link to="/products">
-            <Figure>
-              <Figure.Image
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-                alt="SpringWarehouse logo"
-                src="/spring-3-logo-png-transparent.png"
-              />
-            </Figure>
-            SpringWarehouse
-          </Link>
-        </div>
+        <Link className="navbar-brand" to="/products">
+          <Figure>
+            <Figure.Image
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt="SpringWarehouse logo"
+              src="/spring-3-logo-png-transparent.png"
+            />
+          </Figure>
+          <span>SpringWarehouse</span>
+        </Link>
 
         <button
-          className="navbar-toggler"
+          className="navbar-toggler text-light"
           type="button"
           onClick={handleNavButtonClick}
           data-bs-toggle="collapse"
@@ -47,18 +48,15 @@ function AppNavbar(): JSX.Element {
 
         <div className={getNavbarClass()} id="navbarToggleExternalContent">
           <ul className="navbar-nav">
-            {/* <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="/products">Products</a>
-                    </li> */}
             <li className="nav-item">
-              <div className="nav-link">
-                <Link to="/articles">Articles</Link>
-              </div>
+              <Link className="nav-link" to="/articles">
+                Articles
+              </Link>
             </li>
             <li className="nav-item">
-              <div className="nav-link">
-                <Link to="/authenticate">Authenticate</Link>
-              </div>
+              <Link className="nav-link" to="/authenticate">
+                Authenticate
+              </Link>
             </li>
           </ul>
         </div>
