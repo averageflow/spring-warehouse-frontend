@@ -1,7 +1,32 @@
 # Spring Warehouse frontend
+
 This is the frontend for [the RESTful Java Spring Boot API, called Spring Warehouse](https://github.com/averageflow/spring-warehouse).
 
 This project has been created with React using hooks and functional components, and TypeScript.
+
+## Showcase
+
+Because an image is worth more than a thousand words.
+
+<!--suppress HtmlDeprecatedAttribute -->
+<p align="center">
+  <img src="storage/screenshots/1.png" alt="Spring Warehouse Frontend Showcase 1"/>
+</p>
+
+<!--suppress HtmlDeprecatedAttribute -->
+<p align="center">
+  <img src="storage/screenshots/2.png" alt="Spring Warehouse Frontend Showcase 2"/>
+</p>
+
+<!--suppress HtmlDeprecatedAttribute -->
+<p align="center">
+  <img src="storage/screenshots/3.png" alt="Spring Warehouse Frontend Showcase 3"/>
+</p>
+
+<!--suppress HtmlDeprecatedAttribute -->
+<p align="center">
+  <img src="storage/screenshots/4.png" alt="Spring Warehouse Frontend Showcase 4"/>
+</p>
 
 ## Getting Started with Create React App
 

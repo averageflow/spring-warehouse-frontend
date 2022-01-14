@@ -12,9 +12,6 @@ function ProductRow(productResponse: ProductResponse): JSX.Element {
             <th>stock</th>
             <th>price</th>
             <th>details</th>
-            {/* <th>createdAt</th>
-            <th>updatedAt</th>
-            <th>uuid</th> */}
             <th>image</th>
           </tr>
         </thead>
@@ -27,24 +24,23 @@ function ProductRow(productResponse: ProductResponse): JSX.Element {
                   <td>{product.name}</td>
                   <td>{product.stock}</td>
                   <td>&euro; {product.price}</td>
-
                   <td>
                     <details>
                       <summary>More details</summary>
                       <ul className="list-group p-3">
-                        <li className="list-group-item list-group-item-dark">
+                        <li className="list-group-item bg-dark text-white">
                           <small>
                             Created at:&nbsp;
                             {new Date(product.createdAt).toLocaleString()}
                           </small>
                         </li>
-                        <li className="list-group-item list-group-item-dark">
+                        <li className="list-group-item bg-dark text-white">
                           <small>
                             Updated at:&nbsp;
                             {new Date(product.updatedAt).toLocaleString()}
                           </small>
                         </li>
-                        <li className="list-group-item list-group-item-dark">
+                        <li className="list-group-item bg-dark text-white">
                           <small>
                             UUID:&nbsp;<code>{product.uid}</code>
                           </small>
