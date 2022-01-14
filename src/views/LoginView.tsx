@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { KeyboardEvent, useEffect, useState } from "react";
 
 interface LoginViewState {
   email: string;
@@ -26,6 +26,13 @@ function LoginView() {
     sendDetailsToServer();
   };
 
+  const handleKeyPress = (e: KeyboardEvent) => {
+    e.preventDefault();
+    if (e.key === "Enter") {
+      sendDetailsToServer();
+    }
+  };
+
   const sendDetailsToServer = () => {
     console.log("email", state.email);
     console.log("password", state.password);
@@ -42,12 +49,10 @@ function LoginView() {
       }),
     })
       .then((res) => {
-        // Handle response
         console.log("Response: ", res);
         document.location = "/";
       })
       .catch((err) => {
-        // Handle error
         console.log("Error message: ", err);
       });
   };
@@ -61,7 +66,10 @@ function LoginView() {
               <label htmlFor="exampleInputEmail1">Email address</label>
 
               <div className="input-group flex-nowrap">
-                <span className="input-group-text" id="addon-wrapping">
+                <span
+                  className="input-group-text text-white bg-black"
+                  id="addon-wrapping"
+                >
                   @
                 </span>
                 <input
@@ -70,7 +78,7 @@ function LoginView() {
                   value={state.email}
                   type="email"
                   id="email"
-                  className="form-control"
+                  className="form-control  text-white bg-black"
                   aria-describedby="emailHelp"
                   placeholder="Please enter your e-mail address"
                 />
@@ -84,8 +92,9 @@ function LoginView() {
                 value={state.password}
                 type="password"
                 id="password"
-                className="form-control"
+                className="form-control text-white bg-black"
                 placeholder="Please enter your password"
+                onKeyUp={handleKeyPress}
               />
             </div>
             <button
