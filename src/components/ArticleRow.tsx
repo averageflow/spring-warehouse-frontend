@@ -8,11 +8,11 @@ function ArticleRow(articleResponse: ArticleResponse): JSX.Element {
       <Table striped responsive bordered hover className="table-dark">
         <thead>
           <tr>
-            <th>name</th>
-            <th>stock</th>
-            <th>createdAt</th>
-            <th>updatedAt</th>
-            <th>uuid</th>
+            <th>Name</th>
+            <th>Stock</th>
+            <th>Created on</th>
+            <th>Updated on</th>
+            <th>ID</th>
           </tr>
         </thead>
         <tbody>
