@@ -8,11 +8,11 @@ function ProductRow(productResponse: ProductResponse): JSX.Element {
       <Table striped responsive bordered hover className="table-dark">
         <thead>
           <tr>
-            <th>name</th>
-            <th>stock</th>
-            <th>price</th>
-            <th>details</th>
-            <th>image</th>
+            <th>Name</th>
+            <th>Stock</th>
+            <th>Price</th>
+            <th>Details</th>
+            <th>Image</th>
           </tr>
         </thead>
 
