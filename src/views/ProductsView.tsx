@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import ProductRow from "../components/ProductRow";
 import { redirectToLogin } from "../domain/auth/UnauthorizedPolicies";
+import { defaultHost } from "../domain/Constants";
 import { ProductResponse } from "../domain/product/ProductModels";
 
 const getProducts = (): Promise<ProductResponse> => {
-  const url = `http://localhost:8080/api/products`;
+  const host = process.env.REACT_APP_BACKEND_URL ?? defaultHost
+  const url = `${host}/api/products`;
   const options: RequestInit = {
     method: "GET",
     credentials: "include",

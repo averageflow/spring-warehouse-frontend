@@ -1,0 +1,1 @@
+export const defaultHost = "http://localhost:3000"

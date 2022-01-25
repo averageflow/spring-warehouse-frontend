@@ -1,4 +1,5 @@
 import { KeyboardEvent, useEffect, useState } from "react";
+import { defaultHost } from "../domain/Constants";
 
 interface LoginViewState {
   email: string;
@@ -34,9 +35,8 @@ function LoginView() {
   };
 
   const sendDetailsToServer = () => {
-    console.log("email", state.email);
-    console.log("password", state.password);
-    fetch("http://localhost:8080/api/auth/authenticate", {
+    const host = process.env.REACT_APP_BACKEND_URL ?? defaultHost
+    fetch(`${host}/api/auth/authenticate`, {
       method: "POST",
       headers: {
         "Content-type": "application/json; charset=UTF-8",

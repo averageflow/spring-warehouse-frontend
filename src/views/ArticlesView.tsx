@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import ArticleRow from "../components/ArticleRow";
 import { ArticleResponse } from "../domain/article/ArticleModels";
 import { redirectToLogin } from "../domain/auth/UnauthorizedPolicies";
+import { defaultHost } from "../domain/Constants";
 
 const getArticles = (): Promise<ArticleResponse> => {
-  const url = `http://localhost:8080/api/articles`;
+  const host = process.env.REACT_APP_BACKEND_URL ?? defaultHost
+  const url = `${host}/api/articles`;
   const options: RequestInit = {
     method: "GET",
     credentials: "include",
