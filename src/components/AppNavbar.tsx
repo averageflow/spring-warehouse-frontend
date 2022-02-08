@@ -11,9 +11,20 @@ function AppNavbar(): JSX.Element {
   };
 
   const handleNavButtonClick = () => {
-    console.log("navbarOpen ", navbarOpen);
     setNavbarOpen(!navbarOpen);
   };
+
+  const verticalIcon = <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-grip-vertical " viewBox="0 0 16 16">
+  <path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+</svg>;
+
+const horizontalIcon= <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-grip-horizontal" viewBox="0 0 16 16">
+<path d="M2 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+</svg>;
+
+  const icon = navbarOpen ? verticalIcon : horizontalIcon;
+
+
 
   useEffect(() => {}, [navbarOpen]);
 
@@ -46,7 +57,7 @@ function AppNavbar(): JSX.Element {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <small className="navbar-toggler-icon"></small>
+          {icon}
         </button>
 
         <div className={getNavbarClass()} id="navbarToggleExternalContent">
